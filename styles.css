@@ -317,3 +317,20 @@ img {
   object-fit: cover;            /* ключ: обрезаем аккуратно */
   display: block;
 }
+/* ===== Video block ===== */
+.media {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.media__video {
+  width: 100%;
+  display: block;
+}
+
+/* Чтобы секция видео выглядела “в центре” */
+.media-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+}
