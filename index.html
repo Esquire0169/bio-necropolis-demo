@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Дмитрий — биоцифровой профиль памяти</title>
-  <meta name="description" content="BIO•NECRO — биоцифровые профили памяти: видео, ссылки, история и контекст личности." />
+  <title>Дмитрий — BIO•NECRO</title>
+  <meta name="description" content="BIO•NECRO — биоцифровые профили памяти. Демо-профиль: видео-обращение, ссылки, шаблон и пакеты." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="BIO•NECRO — демо-профиль" />
-  <meta property="og:description" content="Видео-обращение, ссылки и архив материалов — прототип биоцифрового некрополя." />
+  <meta property="og:description" content="Биоцифровой профиль памяти: видео-обращение, ссылки, шаблон и пакеты." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/og.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="bg-noise" aria-hidden="true"></div>
 
@@ -31,12 +32,13 @@
         </div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Навигация">
         <a href="#about-product" class="nav__link">О продукте</a>
         <a href="#profile-structure" class="nav__link">Шаблон</a>
+        <a href="#packages" class="nav__link">Пакеты</a>
         <a href="#video" class="nav__link">Обращение</a>
         <a href="#links" class="nav__link">Ссылки</a>
-        <a href="#create" class="nav__link">Создать профиль</a>
+        <a href="#create" class="nav__link">Создать</a>
       </nav>
     </div>
   </header>
@@ -46,40 +48,45 @@
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__content">
-          <div class="badge reveal">Демо-профиль BIO•NECRO</div>
+          <div class="badge reveal" style="--d: 40ms;">Демо-профиль BIO•NECRO</div>
 
-          <h1 class="hero__title reveal" style="--d: 60ms;">Дмитрий</h1>
+          <h1 class="hero__title reveal" style="--d: 90ms;">Дмитрий</h1>
 
-          <p class="hero__lead reveal" style="--d: 120ms;">
-            Это мой биоцифровой профиль памяти.
-            Здесь собраны голос, контекст жизни, ссылки и материалы —
-            как прототип будущего цифрового некрополя.
+          <p class="hero__lead reveal" style="--d: 140ms;">
+            Это демонстрационный биоцифровой профиль памяти: видео-обращение, ссылки, материалы и архитектура профиля.
+            BIO•NECRO — формат, где сохраняется контекст личности, а не только имя.
           </p>
 
-          <div class="hero__cta reveal" style="--d: 180ms;">
+          <div class="hero__cta reveal" style="--d: 190ms;">
             <a class="btn btn--primary" href="#video">Смотреть обращение</a>
-            <a class="btn btn--ghost" href="#create">Создать такой же профиль</a>
+            <a class="btn btn--ghost" href="#packages">Пакеты профиля</a>
           </div>
 
           <div class="hero__meta reveal" style="--d: 240ms;">
             <div class="meta">
-              <div class="meta__label">Контакт</div>
+              <div class="meta__label">Telegram</div>
               <div class="meta__value">@eogrk</div>
             </div>
             <div class="meta">
+              <div class="meta__label">Instagram</div>
+              <div class="meta__value">@nkshkn_</div>
+            </div>
+            <div class="meta">
               <div class="meta__label">Статус</div>
-              <div class="meta__value">Продуктовый прототип</div>
+              <div class="meta__value">продуктовый прототип</div>
             </div>
           </div>
         </div>
 
-        <aside class="hero__card reveal" style="--d: 120ms;">
+        <aside class="hero__card reveal" style="--d: 140ms;">
           <div class="card">
             <div class="card__top">
-              <div class="avatar">
-                <img src="./assets/avatar.jpg" alt="Фото Дмитрия" onerror="this.style.display='none'; this.parentElement.classList.add('avatar--fallback');" />
-                <div class="avatar__fallback">D</div>
+              <div class="avatar" aria-label="Аватар">
+                <img src="./assets/avatar.jpg" alt="Фото Дмитрия"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('avatar--fallback');" />
+                <div class="avatar__fallback" aria-hidden="true">D</div>
               </div>
+
               <div class="card__name">
                 <div class="card__title">Дмитрий</div>
                 <div class="card__sub">Прототип биоцифровой идентичности</div>
@@ -88,14 +95,14 @@
 
             <div class="card__note">
               <p>
-                Эта страница — демонстрация формата BIO•NECRO:
-                личная ссылка, открываемая по QR или напрямую.
+                Личная ссылка профиля открывается по QR или напрямую.
+                Это демо-страница продукта BIO•NECRO.
               </p>
             </div>
 
             <div class="card__actions">
               <button class="btn btn--small" id="btnCopyLink" type="button">Скопировать ссылку</button>
-              <a class="btn btn--small btn--ghost" href="#profile-structure">Шаблон профиля</a>
+              <a class="btn btn--small btn--ghost" href="#create">Оставить заявку</a>
             </div>
           </div>
         </aside>
@@ -108,9 +115,8 @@
         <div class="section__head reveal">
           <h2 class="section__title">Что такое BIO•NECRO</h2>
           <p class="section__desc">
-            BIO•NECRO — это биоцифровые профили памяти.
-            Не социальная сеть и не мемориальный сайт,
-            а инфраструктура сохранения личности.
+            BIO•NECRO — это биоцифровые профили памяти. Не социальная сеть и не мемориал,
+            а структурированная цифровая “личность”: голос, вехи, связи и материалы.
           </p>
         </div>
 
@@ -129,7 +135,7 @@
           </div>
           <div class="tile">
             <div class="tile__k">Формат</div>
-            <div class="tile__v">Личная ссылка + QR</div>
+            <div class="tile__v">Личная ссылка + QR как физический якорь</div>
           </div>
         </div>
       </div>
@@ -141,7 +147,7 @@
         <div class="section__head reveal">
           <h2 class="section__title">Шаблон биоцифрового профиля</h2>
           <p class="section__desc">
-            Каждый профиль собирается по единой архитектуре.
+            Каждый профиль собирается по единой архитектуре: обязательные блоки + опциональные расширения.
           </p>
         </div>
 
@@ -172,99 +178,119 @@
             <div class="tile__v">Личное послание</div>
           </div>
         </div>
+
+        <div class="callout reveal" style="margin-top:16px;">
+          <h3>Минимальные требования</h3>
+          <p style="margin:0;">
+            Для старта достаточно: <strong>видео</strong> + <strong>2–3 вехи</strong> + <strong>2 ссылки</strong>.
+            Остальное можно добавлять постепенно.
+          </p>
+        </div>
       </div>
     </section>
-<!-- PACKAGES -->
-<section class="section section--alt" id="packages">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2 class="section__title">Пакеты профиля</h2>
-      <p class="section__desc">
-        Формат профиля зависит от глубины. Можно начать с минимального и расширять со временем.
-      </p>
-    </div>
 
-    <div class="grid reveal">
-      <div class="tile">
-        <div class="tile__k">Минимальный</div>
-        <div class="tile__v">
-          Видео-обращение (1–3 минуты)<br>
-          Имя и краткий контекст<br>
-          2–3 ключевые вехи<br>
-          2 ссылки<br>
-          Личная ссылка + QR
+    <!-- PACKAGES -->
+    <section class="section section--alt" id="packages">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title">Пакеты профиля</h2>
+          <p class="section__desc">
+            Формат профиля зависит от глубины. Можно начать с минимального и расширять со временем.
+          </p>
+        </div>
+
+        <div class="grid reveal">
+          <div class="tile">
+            <div class="tile__k">Минимальный</div>
+            <div class="tile__v">
+              Видео-обращение (1–3 минуты)<br>
+              Имя и краткий контекст<br>
+              2–3 ключевые вехи<br>
+              2 ссылки<br>
+              Личная ссылка + QR
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__k">Стандартный</div>
+            <div class="tile__v">
+              Всё из минимального<br>
+              До 5 вех<br>
+              Галерея (3–12 фото)<br>
+              Личное послание<br>
+              Продуктовая структура
+            </div>
+          </div>
+
+          <div class="tile">
+            <div class="tile__k">Расширенный</div>
+            <div class="tile__v">
+              Всё из стандартного<br>
+              Закрытые материалы (PIN)<br>
+              Документы / архив<br>
+              Временные капсулы (этап 2)<br>
+              Подготовка под наследование
+            </div>
+          </div>
+
+          <a class="tile" href="https://t.me/eogrk" target="_blank" rel="noreferrer">
+            <div class="tile__k">Оставить заявку</div>
+            <div class="tile__v">Написать в Telegram</div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="tile">
-        <div class="tile__k">Стандартный</div>
-        <div class="tile__v">
-          Всё из минимального<br>
-          До 5 вех<br>
-          Галерея (3–12 фото)<br>
-          Личное послание<br>
-          Продуктовая структура
-        </div>
-      </div>
-
-      <div class="tile">
-        <div class="tile__k">Расширенный</div>
-        <div class="tile__v">
-          Всё из стандартного<br>
-          Закрытые материалы (PIN)<br>
-          Документы / архив<br>
-          Временные капсулы (позже)<br>
-          Подготовка под наследование
-        </div>
-      </div>
-
-      <a class="tile" href="https://t.me/eogrk" target="_blank" rel="noreferrer">
-        <div class="tile__k">Оставить заявку</div>
-        <div class="tile__v">Написать в Telegram</div>
-      </a>
-    </div>
-  </div>
-</section>
     <!-- VIDEO -->
-    <section id="video" class="section section--alt">
+    <section id="video" class="section">
       <div class="container">
         <div class="section__head reveal">
           <h2 class="section__title">Видео-обращение</h2>
-          <p class="section__desc">Центральный элемент профиля</p>
+          <p class="section__desc">Центральный элемент профиля — короткое личное обращение.</p>
         </div>
 
         <div class="video-block reveal">
-          <button class="video" id="openVideo" type="button">
-            <img class="video__poster" src="./assets/poster.jpg" alt="Постер" />
+          <button class="video" id="openVideo" type="button" aria-label="Открыть видео">
+            <img class="video__poster" src="./assets/poster.jpg" alt="Постер видео"
+                 onerror="this.style.display='none';" />
             <div class="video__overlay">
-              <div class="play"><span class="play__triangle"></span></div>
+              <div class="play" aria-hidden="true">
+                <span class="play__triangle"></span>
+              </div>
               <div class="video__text">
                 <div class="video__title">Личное видео-обращение</div>
                 <div class="video__sub">1–3 минуты</div>
               </div>
             </div>
           </button>
+
+          <div class="hint">
+            Рекомендация: без монтажа, спокойный свет и голос. Это “фиксация смысла”, а не контент.
+          </div>
         </div>
       </div>
     </section>
 
     <!-- LINKS -->
-    <section id="links" class="section">
+    <section id="links" class="section section--alt">
       <div class="container">
         <div class="section__head reveal">
           <h2 class="section__title">Ссылки и контакты</h2>
+          <p class="section__desc">Точки доступа: где найти человека и его контекст.</p>
         </div>
 
         <div class="grid reveal">
-          <a class="tile" href="https://t.me/eogrk" target="_blank">
+          <a class="tile" href="https://t.me/eogrk" target="_blank" rel="noreferrer">
             <div class="tile__k">Telegram</div>
             <div class="tile__v">@eogrk</div>
           </a>
-          <a class="tile" href="https://instagram.com/nkshkn_" target="_blank">
+
+          <a class="tile" href="https://instagram.com/nkshkn_" target="_blank" rel="noreferrer">
             <div class="tile__k">Instagram</div>
             <div class="tile__v">@nkshkn_</div>
           </a>
-          <a class="tile" href="https://t.me/eogrk" target="_blank">
+
+          <a class="tile" href="https://t.me/eogrk" target="_blank" rel="noreferrer">
             <div class="tile__k">Создать профиль</div>
             <div class="tile__v">Написать в Telegram</div>
           </a>
@@ -273,14 +299,15 @@
     </section>
 
     <!-- CREATE -->
-    <section class="section section--alt" id="create">
+    <section class="section" id="create">
       <div class="container">
         <div class="callout reveal">
           <h3>Создать биоцифровой профиль</h3>
           <p>
             Напишите в Telegram — профиль создаётся вручную по шаблону.
+            Вы пришлёте видео и материалы, я соберу страницу и подготовлю QR.
           </p>
-          <a class="btn btn--primary" href="https://t.me/eogrk" target="_blank">
+          <a class="btn btn--primary" href="https://t.me/eogrk" target="_blank" rel="noreferrer">
             Написать в Telegram
           </a>
         </div>
@@ -301,16 +328,17 @@
   </footer>
 
   <!-- Video Modal -->
-  <div class="modal" id="videoModal">
-    <div class="modal__backdrop" id="closeVideo"></div>
-    <div class="modal__panel">
+  <div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Видео">
+    <div class="modal__backdrop" id="closeVideo" tabindex="-1"></div>
+    <div class="modal__panel" role="document">
       <div class="modal__head">
         <div class="modal__title">Видео-обращение</div>
-        <button class="icon-btn" id="closeVideoBtn">✕</button>
+        <button class="icon-btn" id="closeVideoBtn" type="button" aria-label="Закрыть">✕</button>
       </div>
       <div class="modal__body">
-        <video id="memorialVideo" controls>
+        <video id="memorialVideo" controls preload="metadata" playsinline>
           <source src="./assets/video.mp4" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
         </video>
       </div>
     </div>
