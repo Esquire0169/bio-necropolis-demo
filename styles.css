@@ -539,3 +539,22 @@ body {
 .price-card > p:first-of-type{
   min-height: 44px;   /* выравнивает уровень цены */
 }
+/* ===== Pricing cards: buttons always at bottom ===== */
+.price-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Контент карточки (текст, списки) */
+.price-card .price-content{
+  flex-grow: 1;
+}
+
+/* Блок с кнопками */
+.price-card .price-actions{
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  padding-top: 12px;
+}
