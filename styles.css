@@ -585,4 +585,30 @@ a.tile:hover{
 .section, .section--alt{ position: relative; overflow: hidden; }
 
 /* 7) Если где-то в старом css были max-width у .grid или display:flex — перебиваем */
-.grid{ max-width: none !important; }
+.grid{ max-width: none !important; 
+}
+/* ===== Simplify background (no gradient bleed) ===== */
+
+/* Убираем “световые пятна” на фоне страницы */
+body{
+  background: #0b0c10 !important;
+}
+
+/* Шум можно оставить, но сделаем слабее, чтобы не давал полосы */
+.bg-noise{
+  opacity: .04 !important;
+  mix-blend-mode: normal !important;
+}
+
+/* alt-секции делаем ровной подложкой без “заезда” */
+.section--alt{
+  background: rgba(255,255,255,.015) !important;
+  border-top: 1px solid rgba(255,255,255,.06) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+}
+
+/* На всякий: запрещаем любые псевдо-фоны секций, если они есть в старом css */
+.section--alt::before,
+.section--alt::after{
+  content: none !important;
+}
