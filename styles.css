@@ -493,3 +493,40 @@ body {
   border-radius: 18px;
   padding: 18px;
 }
+/* ===== Link chips (visible clickable) ===== */
+.link-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 10px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  text-decoration:none;
+  color: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.chip:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.18);
+}
+
+.chip__k{
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.70);
+}
+
+.chip__v{
+  font-weight: 700;
+}
