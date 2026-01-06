@@ -551,3 +551,38 @@ a.tile:hover{
   outline: 2px solid rgba(154,215,255,.55);
   outline-offset: 2px;
 }
+/* ===== BIO•NECRO: Grid / Layout Stabilizer (append-only) ===== */
+
+/* 1) Гарантируем корректный box-model */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* 2) Контейнер не должен “вылезать” */
+.container { width: min(1060px, calc(100% - 40px)); margin: 0 auto; }
+
+/* 3) Стабильная сетка для всех блоков с .grid */
+.grid{
+  width: 100%;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
+}
+
+/* 4) Карточки не раздвигают сетку */
+.tile{
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 5) Длинный текст не ломает верстку */
+.tile__v, .section__desc, .hero__lead{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 6) Внутри секций не должно быть “липких” float/странных наложений */
+.section, .section--alt{ position: relative; overflow: hidden; }
+
+/* 7) Если где-то в старом css были max-width у .grid или display:flex — перебиваем */
+.grid{ max-width: none !important; }
