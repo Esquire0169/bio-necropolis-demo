@@ -594,21 +594,28 @@ body {
 }
 
 /* ===== Pricing cards: кнопки всегда снизу ===== */
-.tile.price-card{
+.card.price-card{
   display:flex;
   flex-direction:column;
   height:100%;
 }
 
-.tile.price-card .tile__v{
-  /* основной контент карточки (список/описание) занимает место */
+/* основной контент карточки растягивается */
+.card.price-card .price-content{
   flex: 1 1 auto;
 }
 
-.tile.price-card .price-actions{
-  margin-top:auto;            /* прижимает кнопки вниз */
+/* блок кнопок прижат к низу */
+.card.price-card .price-actions{
+  margin-top:auto;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
   padding-top: 14px;
+}
+
+/* Если у тебя контейнер карточек — flex/grid, это помогает тянуть высоту */
+.cards,
+.grid{
+  align-items: stretch;
 }
