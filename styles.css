@@ -212,3 +212,21 @@ a { color: var(--accent); text-decoration: none; }
     opacity: 0;
   }
 }
+/* ===== FORCE VISIBILITY FIX (debug) ===== */
+body, p, h1, h2, h3, a, span, div {
+  color: var(--text) !important;
+  opacity: 1 !important;
+}
+
+.card p, .card h3, .section__text, .hero__lead {
+  color: var(--text) !important;
+  opacity: 1 !important;
+  font-size: inherit !important;
+  visibility: visible !important;
+}
+
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
