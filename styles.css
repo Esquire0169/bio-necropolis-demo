@@ -185,3 +185,30 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--muted);
   border-top: 1px solid var(--line);
 }
+/* Pulse dot for BIO•NECRO logo */
+.brand__dot {
+  position: relative;
+}
+
+.brand__dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(154, 215, 255, 0.35);
+  animation: pulse 2.2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
