@@ -60,3 +60,70 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+// ===== Auto-hide header while hovering interactive elements =====
+(() => {
+  const header = document.querySelector(".header");
+  if (!header) return;
+
+  // Какие элементы считаем "интерактивными" (наведение на них прячет header)
+  const hoverSelectors = [
+    ".btn",
+    ".card",
+    ".chip",
+    ".price-card",
+    ".gallery__item",
+    ".video",
+    "a" // ссылки тоже
+  ];
+
+  const isDesktop = () => window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  let hideTimer = null;
+  let showTimer = null;
+
+  const hide = () => {
+    if (!isDesktop()) return;
+    header.classList.add("is-hidden");
+  };
+
+  const show = () => {
+    header.classList.remove("is-hidden");
+  };
+
+  const scheduleHide = () => {
+    if (!isDesktop()) return;
+    clearTimeout(showTimer);
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(hide, 120); // небольшая задержка, чтобы не дергалось
+  };
+
+  const scheduleShow = () => {
+    clearTimeout(hideTimer);
+    clearTimeout(showTimer);
+    showTimer = setTimeout(show, 140);
+  };
+
+  const attach = () => {
+    // На мобильных не надо
+    if (!isDesktop()) return;
+
+    const nodes = document.querySelectorAll(hoverSelectors.join(","));
+    nodes.forEach((el) => {
+      el.addEventListener("mouseenter", scheduleHide);
+      el.addEventListener("mouseleave", scheduleShow);
+    });
+
+    // Если пользователь навёл мышь в верхнюю часть экрана — возвращаем header
+    window.addEventListener("mousemove", (e) => {
+      if (!isDesktop()) return;
+      if (e.clientY < 80) show();
+    });
+  };
+
+  // Подождём загрузки DOM
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", attach);
+  } else {
+    attach();
+  }
+})();
