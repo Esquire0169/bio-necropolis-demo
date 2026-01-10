@@ -425,3 +425,61 @@ img { max-width: 100%; height: auto; }
 .cards.cards--3:hover .card.price-card:hover{
   opacity: 1;
 }
+/* ===== iOS-like magnification for nav ===== */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav a{
+  position: relative;
+  transform-origin: center;
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    color .18s ease,
+    filter .18s ease;
+  will-change: transform;
+}
+
+/* общий “режим дока”: когда наводишься на меню — остальные чуть уменьшаются/тускнеют */
+@media (hover: hover) and (pointer: fine){
+  .nav:hover a{
+    transform: scale(.94);
+    opacity: .72;
+    filter: blur(.0px);
+  }
+
+  /* выбранный пункт “лупой” */
+  .nav a:hover{
+    transform: scale(1.14);
+    opacity: 1;
+    color: rgba(255,255,255,.95);
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.16);
+    z-index: 2;
+    box-shadow:
+      0 12px 32px rgba(0,0,0,.35),
+      inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+
+  /* соседи слева/справа — чуть больше, чем остальные (эффект iOS) */
+  .nav a:hover + a{
+    transform: scale(1.03);
+    opacity: .92;
+  }
+  .nav a:has(+ a:hover){
+    transform: scale(1.03);
+    opacity: .92;
+  }
+}
+
+/* fallback для браузеров без :has (просто будет лупа без “соседей”) */
+@supports not selector(.nav a:has(+ a:hover)){
+  @media (hover: hover) and (pointer: fine){
+    .nav:hover a{ transform: scale(.94); opacity: .72; }
+    .nav a:hover{ transform: scale(1.14); opacity: 1; }
+  }
+}
