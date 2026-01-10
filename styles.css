@@ -621,5 +621,5 @@ body {
 }
 /* Align price row across package cards */
 .price-card .price { margin-top: 12px; }
-.price-card .price-card__top + p { min-height: 44px;
+.price-card .price-card__top + p { min-height: 52px;
 }
