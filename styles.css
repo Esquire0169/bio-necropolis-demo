@@ -514,3 +514,17 @@ img { max-width: 100%; height: auto; }
     opacity: 1;
   }
 }
+/* Fix: prevent double highlight when liquid indicator is enabled */
+@media (hover: hover) and (pointer: fine){
+  .nav:hover a{
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .nav a:hover{
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+}
