@@ -60,3 +60,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
+// ===== Liquid nav indicator (iOS-like) =====
+(() => {
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
+
+  const indicator = nav.querySelector(".nav-indicator");
+  const links = [...nav.querySelectorAll("a")];
+
+  const isDesktop = () =>
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  const moveIndicator = (el) => {
+    const navRect = nav.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+
+    indicator.style.width = `${rect.width + 12}px`;
+    indicator.style.transform =
+      `translateX(${rect.left - navRect.left - 6}px)`;
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("mouseenter", () => {
+      if (!isDesktop()) return;
+      moveIndicator(link);
+      indicator.style.opacity = "1";
+    });
+  });
+
+  nav.addEventListener("mouseleave", () => {
+    indicator.style.opacity = "0";
+  });
+})();
