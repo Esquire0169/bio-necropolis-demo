@@ -635,3 +635,14 @@ body {
     min-height: 72px;
   }
 }
+/* ===== Header auto-hide on hover (JS toggles class) ===== */
+.header{
+  transition: transform .22s ease, opacity .22s ease;
+  will-change: transform, opacity;
+}
+
+.header.is-hidden{
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
