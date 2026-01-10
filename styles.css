@@ -528,3 +528,11 @@ img { max-width: 100%; height: auto; }
     box-shadow: none !important;
   }
 }
+.nav a{ position: relative; z-index: 2; }
+.nav-indicator{ z-index: 1; }
+/* Brand link: always white */
+.brand__text{
+  color: rgba(255,255,255,.95);
+}
+.brand__text:visited{ color: rgba(255,255,255,.95); }
+.brand__text:hover{ color: rgba(255,255,255,.98); }
