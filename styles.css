@@ -629,3 +629,9 @@ body {
     min-height: 56px;
   }
 }
+/* Align prices: normalize subtitle height above price */
+@media (min-width: 900px){
+  .price-card .price-card__top + p{
+    min-height: 72px;
+  }
+}
