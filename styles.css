@@ -623,3 +623,9 @@ body {
 .price-card .price { margin-top: 12px; }
 .price-card .price-card__top + p { min-height: 52px;
 }
+/* Desktop: align prices by normalizing subtitle height above price */
+@media (min-width: 900px){
+  .price-card .price-card__top + p{
+    min-height: 56px;
+  }
+}
