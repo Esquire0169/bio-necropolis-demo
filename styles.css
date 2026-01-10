@@ -404,3 +404,24 @@ img { max-width: 100%; height: auto; }
   color: var(--muted);
   border-top: 1px solid var(--line);
 }
+/* ===== Pricing cards: single hover highlight (thin accent outline) ===== */
+.cards.cards--3 .card.price-card{
+  border: 1px solid rgba(255,255,255,.10);
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+/* когда навели на конкретную карточку */
+.cards.cards--3 .card.price-card:hover{
+  border-color: rgba(154,215,255,.55); /* акцентная тонкая обводка */
+  box-shadow:
+    0 18px 46px rgba(0,0,0,.32),
+    0 0 0 2px rgba(154,215,255,.10);   /* мягкое свечение */
+}
+
+/* чтобы остальные “пригасали”, и выделение читалось сильнее */
+.cards.cards--3:hover .card.price-card{
+  opacity: .92;
+}
+.cards.cards--3:hover .card.price-card:hover{
+  opacity: 1;
+}
