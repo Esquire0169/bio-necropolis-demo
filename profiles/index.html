@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BIO•NECRO — каталог профилей</title>
+  <meta name="description" content="Каталог биоцифровых профилей BIO•NECRO" />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <div class="brand">
+      <span class="brand__dot"></span>
+      <a class="brand__text" href="../index.html">BIO•NECRO</a>
+    </div>
+
+    <nav class="nav">
+      <a href="../index.html#about">О продукте</a>
+      <a href="index.html">Каталог</a>
+      <a href="../index.html#demo-profile">Демо</a>
+      <a href="../index.html#packages">Пакеты</a>
+      <a href="../index.html#how">Как заказать</a>
+      <a href="../index.html#contacts">Контакты</a>
+
+      <span class="nav-indicator"></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="container profile-narrow">
+    <h1 class="section__title">Каталог профилей</h1>
+    <p class="section__text">
+      Публичные биоцифровые профили, созданные в системе BIO•NECRO.
+    </p>
+
+    <div class="cards">
+
+      <!-- PROFILE CARD -->
+      <div class="card">
+        <span class="card__label">Демо-профиль</span>
+
+        <div style="display:flex; gap:16px; align-items:center; margin-top:12px;">
+          <img src="../assets/dmitry/avatar.jpg"
+               alt="Дмитрий"
+               style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.15);" />
+
+          <div>
+            <strong>Дмитрий</strong><br>
+            <span style="color:var(--muted); font-size:14px;">
+              Эталонный профиль BIO•NECRO
+            </span>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <a href="dmitry.html" class="btn btn--ghost">
+            Открыть профиль →
+          </a>
+        </div>
+      </div>
+
+      <!-- FUTURE PLACEHOLDER -->
+      <div class="card" style="opacity:.45;">
+        <span class="card__label">Скоро</span>
+        <p>
+          Здесь появятся новые профили.<br>
+          <span style="color:var(--muted); font-size:14px;">
+            BIO•NECRO расширяется
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  BIO•NECRO · каталог профилей
+</footer>
+
+<script src="../app.js"></script>
+</body>
+</html>
