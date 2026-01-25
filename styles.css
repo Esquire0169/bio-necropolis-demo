@@ -536,3 +536,37 @@ img { max-width: 100%; height: auto; }
 }
 .brand__text:visited{ color: rgba(255,255,255,.95); }
 .brand__text:hover{ color: rgba(255,255,255,.98); }
+/* ===== Catalog avatar fix ===== */
+.avatar{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.15);
+  flex: 0 0 64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.03);
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.avatar--fallback::after{
+  content: attr(data-fallback);
+  font-weight: 800;
+  font-size: 20px;
+  color: rgba(255,255,255,.85);
+}
+
+.profile-name{
+  display:block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
