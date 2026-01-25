@@ -47,17 +47,18 @@
         <span class="card__label">Демо-профиль</span>
 
         <div style="display:flex; gap:16px; align-items:center; margin-top:12px;">
-          <img src="../assets/dmitry/avatar.jpg"
-               alt="Дмитрий"
-               style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.15);" />
+  <div class="avatar">
+    <img src="../assets/dmitry/avatar.jpg" alt="Дмитрий"
+         onerror="this.style.display='none'; this.parentElement.classList.add('avatar--fallback'); this.parentElement.setAttribute('data-fallback','Д');" />
+  </div>
 
-          <div>
-            <strong>Дмитрий</strong><br>
-            <span style="color:var(--muted); font-size:14px;">
-              Эталонный профиль BIO•NECRO
-            </span>
-          </div>
-        </div>
+  <div style="min-width:0;">
+    <strong class="profile-name">Дмитрий</strong><br>
+    <span style="color:var(--muted); font-size:14px;">
+      Эталонный профиль BIO•NECRO
+    </span>
+  </div>
+</div>
 
         <div style="margin-top:16px;">
           <a href="dmitry.html" class="btn btn--ghost">
