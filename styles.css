@@ -570,3 +570,15 @@ img { max-width: 100%; height: auto; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* Fix: hide nav indicator until hover to avoid stray vertical line */
+.nav-indicator{
+  opacity: 0 !important;
+  width: 0 !important;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .nav:hover .nav-indicator{
+    opacity: 1 !important;
+  }
+}
+.nav{ overflow: hidden; }
